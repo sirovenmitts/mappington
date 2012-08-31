@@ -15,6 +15,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
   gem.version       = Mappington::VERSION
 
-  gem.add_dependency 'hashie'
+  gem.add_dependency 'hashie', '>=2.0.0.beta'
+  gem.add_dependency 'addressable'
   gem.add_development_dependency 'rspec'
 end
