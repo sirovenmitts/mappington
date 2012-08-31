@@ -1,4 +1,6 @@
 module Mappington
+	# A Point is a position on a map. It can be an address
+	# or a coordinate.
 	class Point
 		def initialize point
 			@point = point

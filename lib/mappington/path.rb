@@ -7,6 +7,10 @@ require 'mappington/point_list'
 require 'mappington/path_error'
 
 module Mappington
+	# Paths can be drawn on top of a Google map. You must
+	# specify a color to draw with, and at least two points.
+	# A Path can also be told how wide the line it draws
+	# should be.
 	class Path < Hashie::Dash
 		include Hashie::Extensions::Coercion
 		property :stroke_color, :default => :black

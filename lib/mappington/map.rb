@@ -8,6 +8,14 @@ require 'hashie/extensions/coercion'
 require 'mappington/size'
 
 module Mappington
+	# A Map generates a URI pointing to a map made by Google. You
+	# must give Map at least a point to center on and a zoom level,
+	# or 1 or more markers or paths. You must also tell Map how
+	# big an image it should render.
+	# 
+	# You can change some other settings, such as which language the
+	# Google map should be in, what image format Google should return,
+	# and what kind of map should appear.
 	class Map < Hashie::Trash
 		include Hashie::Extensions::Coercion
 
