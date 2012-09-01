@@ -34,6 +34,7 @@ module Mappington
 		property :scale
 		property :language
 		property :region
+		property :sensor, :default => false
 
 		def to_s
 			raise MapError.new if (center.nil? || zoom_level.nil?) && markers.empty? && paths.empty?
@@ -41,6 +42,7 @@ module Mappington
 			result << 'center=%s&zoom=%s' % [center, zoom_level] if center && zoom_level
 			result << '&' + markers.join('&') unless markers.empty?
 			result << '&' + paths.join('&') unless paths.empty?
+			result << '&' + sensor.to_s
 			result
 		end
 	end

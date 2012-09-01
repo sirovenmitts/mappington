@@ -42,6 +42,10 @@ describe Mappington::Map do
 		subject.region.should eq :us
 	end
 
+	it 'can be using a positioning sensor' do
+		subject.sensor.should eq false
+	end
+
 	it 'can have markers' do
 		subject.markers << Mappington::Marker.new(:at => 'the Eiffel Tower')
 		subject.markers.should have(1).item
@@ -64,21 +68,21 @@ describe Mappington::Map do
 			subject.zoom_level = 10
 			subject.markers = []
 			subject.paths = []
-			subject.to_s.should eq 'http://maps.googleapis.com/maps/api/staticmap?size=320x240center=0,0&zoom=10'
+			subject.to_s.should eq 'http://maps.googleapis.com/maps/api/staticmap?size=320x240center=0,0&zoom=10&false'
 		end
 		it 'should become a URI if it has at least one marker' do
 			subject.center = nil
 			subject.zoom_level = nil
 			subject.markers = [Mappington::Marker.new(:at => 'the Eiffel Tower')]
 			subject.paths = []
-			subject.to_s.should eq 'http://maps.googleapis.com/maps/api/staticmap?size=320x240&markers=color%3A%7Clabel%3A%7Cthe+Eiffel+Tower'
+			subject.to_s.should eq 'http://maps.googleapis.com/maps/api/staticmap?size=320x240&markers=color%3A%7Clabel%3A%7Cthe+Eiffel+Tower&false'
 		end
 		it 'should become a URI if it has at least one path' do
 			subject.center = nil
 			subject.zoom_level = nil
 			subject.markers = []
 			subject.paths = [Mappington::Path.new(:points => ['the Eiffel Tower', 'the Grand Canyon'])]
-			subject.to_s.should eq 'http://maps.googleapis.com/maps/api/staticmap?size=320x240&path=color%3Ablack%7Cweight%3A1%7Cthe+Eiffel+Tower%7Cthe+Grand+Canyon'
+			subject.to_s.should eq 'http://maps.googleapis.com/maps/api/staticmap?size=320x240&path=color%3Ablack%7Cweight%3A1%7Cthe+Eiffel+Tower%7Cthe+Grand+Canyon&false'
 		end
 	end
 end
