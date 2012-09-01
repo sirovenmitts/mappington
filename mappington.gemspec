@@ -18,7 +18,17 @@ Gem::Specification.new do |gem|
   gem.requirements << '*** This library requires Hashie >= 2.0.0.beta ***'
   gem.requirements << '*** You will have to download it from Github  ***'
 
+  gem.post_install_message =<<-MESSAGE
+Thank you for installing Mappington, but I need you to do a little legwork
+before you can use this library.
+
+Mappington uses Hashie internally, specifically Hashie version >=2.0.0.beta. Being
+Beta, the maintainers of Hashie have not pushed their gem to Rubygems.org. You must
+install Hashie from github.com/intridea/hashie.
+
+<3 Ken
+MESSAGE
+
   gem.add_dependency 'hashie' # , '>=2.0.0.beta'
-  gem.add_dependency 'addressable'
   gem.add_development_dependency 'rspec'
 end
