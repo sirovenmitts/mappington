@@ -76,8 +76,8 @@ This library was written from scratch after I spent a good long while trying to 
 
 ## Contribute
 
-1  Fork the library
-2  Make some changes
-3  Create a pull request
+1. Fork the library
+2. Make some changes
+3. Create a pull request
 
 Alternatively, just email me or open an issue on github. I'd be happy to support more features if there is demand for them.
