@@ -72,12 +72,12 @@ You can't do this yet, but it's my goal for 2.0
 
 ## History
 
-This library was written from scratch after I spent a good long while revamping Brent Sowers' GoogleStaticMap. The two libraries accomplish the same goal (generating a URI pointing to a Google Map) but go about it in different ways. Additionally, Brent's library supports downloading the image and returning the bytes. If you are looking for a more full featured library check [his out](github.com/brentsowers1/googlestaticmap).
+This library was written from scratch after I spent a good long while trying to revamp Brent Sowers' GoogleStaticMap. The two libraries accomplish the same goal (generating a URI pointing to a Google Map) but go about it in different ways. Additionally, Brent's library supports downloading the image and returning the bytes. If you are looking for a more full featured library check [his out](github.com/brentsowers1/googlestaticmap).
 
 ## Contribute
 
-1) Fork the library
-2) Make some changes
-3) Create a pull request
+1  Fork the library
+2  Make some changes
+3  Create a pull request
 
 Alternatively, just email me or open an issue on github. I'd be happy to support more features if there is demand for them.
