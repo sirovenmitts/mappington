@@ -84,5 +84,12 @@ describe Mappington::Map do
 			subject.paths = [Mappington::Path.new(:points => ['the Eiffel Tower', 'the Grand Canyon'])]
 			subject.to_s.should eq 'http://maps.googleapis.com/maps/api/staticmap?size=320x240&path=color%3Ablack%7Cweight%3A1%7Cthe+Eiffel+Tower%7Cthe+Grand+Canyon&false'
 		end
+		# Google silently truncates URIs that are longer than 2048 characters.
+		it 'should raise an error if the URI is too long' do
+			100.times do
+				subject.markers << Mappington::Marker.new(:at => [rand(100), rand(100)])
+			end
+			expect {subject.to_s}.to raise_error
+		end
 	end
 end

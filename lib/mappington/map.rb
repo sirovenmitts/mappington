@@ -43,6 +43,7 @@ module Mappington
 			result << '&' + markers.join('&') unless markers.empty?
 			result << '&' + paths.join('&') unless paths.empty?
 			result << '&' + sensor.to_s
+			raise MapError.new if result.length > 2048
 			result
 		end
 	end
